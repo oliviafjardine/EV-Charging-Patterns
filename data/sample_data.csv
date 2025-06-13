@@ -1,0 +1,26 @@
+User ID,Vehicle Model,Battery Capacity (kWh),Charging Station ID,Charging Station Location,Charging Start Time,Charging End Time,Energy Consumed (kWh),Charging Duration (hours),Charging Rate (kW),Charging Cost (USD),Time of Day,Day of Week,State of Charge (Start %),State of Charge (End %),Distance Driven (km),Temperature (Celsius),Vehicle Age (years),Charger Type,User Type
+U001,Tesla Model 3,75,CS001,Downtown Mall,2024-01-15 08:30:00,2024-01-15 10:15:00,45,1.75,25.7,12.50,Morning,Monday,20,80,120,15,2,Level 2,Commuter
+U002,Nissan Leaf,40,CS002,Highway Rest Stop,2024-01-15 14:20:00,2024-01-15 14:50:00,24,0.5,48,18.00,Afternoon,Monday,30,90,80,18,3,DC Fast Charger,Long-Distance Traveler
+U003,BMW i3,33,CS003,Shopping Center,2024-01-15 19:45:00,2024-01-15 21:30:00,20,1.75,11.4,8.50,Evening,Monday,25,85,45,12,1,Level 2,Casual Driver
+U001,Tesla Model 3,75,CS001,Downtown Mall,2024-01-16 08:45:00,2024-01-16 10:30:00,42,1.75,24,11.80,Morning,Tuesday,22,78,115,16,2,Level 2,Commuter
+U004,Chevrolet Bolt,60,CS004,Office Complex,2024-01-16 09:00:00,2024-01-16 11:45:00,36,2.75,13.1,10.20,Morning,Tuesday,15,75,95,14,4,Level 2,Commuter
+U005,Audi e-tron,95,CS002,Highway Rest Stop,2024-01-16 13:15:00,2024-01-16 13:45:00,57,0.5,114,42.75,Afternoon,Tuesday,20,80,200,20,1,DC Fast Charger,Long-Distance Traveler
+U002,Nissan Leaf,40,CS005,Residential Area,2024-01-16 20:30:00,2024-01-16 22:15:00,18,1.75,10.3,7.20,Evening,Tuesday,35,80,35,11,3,Level 2,Casual Driver
+U006,Tesla Model Y,82,CS001,Downtown Mall,2024-01-17 07:30:00,2024-01-17 09:45:00,49,2.25,21.8,13.70,Morning,Wednesday,18,78,140,17,1,Level 2,Commuter
+U003,BMW i3,33,CS006,University Campus,2024-01-17 11:00:00,2024-01-17 12:30:00,16,1.5,10.7,6.40,Morning,Wednesday,30,78,25,19,1,Level 2,Casual Driver
+U007,Ford Mustang Mach-E,88,CS002,Highway Rest Stop,2024-01-17 15:45:00,2024-01-17 16:15:00,53,0.5,106,39.75,Afternoon,Wednesday,25,85,180,22,2,DC Fast Charger,Long-Distance Traveler
+U004,Chevrolet Bolt,60,CS004,Office Complex,2024-01-17 17:30:00,2024-01-17 19:15:00,33,1.75,18.9,9.90,Evening,Wednesday,20,75,88,15,4,Level 2,Commuter
+U008,Hyundai Kona Electric,64,CS003,Shopping Center,2024-01-18 10:15:00,2024-01-18 12:00:00,38,1.75,21.7,11.40,Morning,Thursday,22,81,102,13,3,Level 2,Casual Driver
+U001,Tesla Model 3,75,CS007,Airport,2024-01-18 06:00:00,2024-01-18 06:30:00,45,0.5,90,33.75,Morning,Thursday,20,80,160,8,2,DC Fast Charger,Long-Distance Traveler
+U009,Volkswagen ID.4,82,CS001,Downtown Mall,2024-01-18 18:45:00,2024-01-18 20:30:00,41,1.75,23.4,12.30,Evening,Thursday,25,75,110,16,1,Level 2,Commuter
+U005,Audi e-tron,95,CS008,Hotel,2024-01-18 21:00:00,2024-01-18 23:30:00,57,2.5,22.8,17.10,Night,Thursday,15,75,220,10,1,Level 2,Long-Distance Traveler
+U010,Polestar 2,78,CS002,Highway Rest Stop,2024-01-19 12:30:00,2024-01-19 13:00:00,47,0.5,94,35.25,Afternoon,Friday,22,82,175,25,2,DC Fast Charger,Long-Distance Traveler
+U002,Nissan Leaf,40,CS005,Residential Area,2024-01-19 19:15:00,2024-01-19 21:00:00,22,1.75,12.6,8.80,Evening,Friday,28,83,42,14,3,Level 2,Casual Driver
+U006,Tesla Model Y,82,CS009,Gym,2024-01-20 07:00:00,2024-01-20 09:15:00,49,2.25,21.8,14.70,Morning,Saturday,20,80,125,12,1,Level 2,Casual Driver
+U011,Mercedes EQS,108,CS001,Downtown Mall,2024-01-20 14:30:00,2024-01-20 16:45:00,65,2.25,28.9,19.50,Afternoon,Saturday,15,75,195,18,1,Level 2,Casual Driver
+U003,BMW i3,33,CS010,Beach Parking,2024-01-20 11:45:00,2024-01-20 13:30:00,20,1.75,11.4,10.00,Morning,Saturday,25,85,55,24,1,Level 2,Casual Driver
+U007,Ford Mustang Mach-E,88,CS002,Highway Rest Stop,2024-01-21 09:15:00,2024-01-21 09:45:00,53,0.5,106,39.75,Morning,Sunday,25,85,190,20,2,DC Fast Charger,Long-Distance Traveler
+U012,Lucid Air,118,CS007,Airport,2024-01-21 16:00:00,2024-01-21 16:30:00,71,0.5,142,53.25,Afternoon,Sunday,20,80,250,19,1,DC Fast Charger,Long-Distance Traveler
+U004,Chevrolet Bolt,60,CS011,Park and Ride,2024-01-21 18:30:00,2024-01-21 20:15:00,36,1.75,20.6,10.80,Evening,Sunday,18,78,92,17,4,Level 2,Commuter
+U008,Hyundai Kona Electric,64,CS003,Shopping Center,2024-01-22 08:00:00,2024-01-22 09:45:00,38,1.75,21.7,11.40,Morning,Monday,22,81,98,15,3,Level 2,Commuter
+U013,Rivian R1T,135,CS002,Highway Rest Stop,2024-01-22 13:45:00,2024-01-22 14:15:00,81,0.5,162,60.75,Afternoon,Monday,20,80,280,21,1,DC Fast Charger,Long-Distance Traveler

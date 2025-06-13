@@ -1,0 +1,119 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: ev_postgres
+    environment:
+      POSTGRES_DB: ev_charging
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - ev_network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: ev_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - ev_network
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ev_backend
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/ev_charging
+      - REDIS_URL=redis://redis:6379
+      - ENVIRONMENT=development
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+      - ./models:/app/models
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - ev_network
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Celery Worker for Background Tasks
+  celery_worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ev_celery_worker
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/ev_charging
+      - REDIS_URL=redis://redis:6379
+      - ENVIRONMENT=development
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+      - ./models:/app/models
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - ev_network
+    command: celery -A app.core.celery worker --loglevel=info
+
+  # Celery Beat for Scheduled Tasks
+  celery_beat:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ev_celery_beat
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/ev_charging
+      - REDIS_URL=redis://redis:6379
+      - ENVIRONMENT=development
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+      - ./models:/app/models
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - ev_network
+    command: celery -A app.core.celery beat --loglevel=info
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ev_frontend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_WS_URL=ws://localhost:8000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - ev_network
+    command: npm run dev
+
+volumes:
+  postgres_data:
+
+networks:
+  ev_network:
+    driver: bridge

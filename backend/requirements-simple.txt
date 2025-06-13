@@ -1,0 +1,9 @@
+# Very minimal requirements for demo
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+sqlalchemy
+aiosqlite
+python-multipart
+python-dotenv
