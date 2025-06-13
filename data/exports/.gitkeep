@@ -1,0 +1,2 @@
+# This file ensures the data/exports directory is tracked by git
+# Export files are ignored but the directory structure is preserved
